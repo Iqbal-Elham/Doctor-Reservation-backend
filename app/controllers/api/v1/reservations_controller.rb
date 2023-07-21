@@ -21,7 +21,7 @@ module Api
         end
       end
 
-      # GET /reservations/1
+      # GET /reservations/:id
       def show
         render json: ReservationsRepresenter.new(@reservation).as_json
       end
