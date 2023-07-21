@@ -26,7 +26,7 @@ module Api
         render json: ReservationsRepresenter.new(@reservation).as_json
       end
 
-      # PATCH/PUT /reservations/1
+      # PATCH/PUT /reservations/:id
       def update
         @reservation.update(reservation_params)
         if @reservation.save
