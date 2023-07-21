@@ -36,7 +36,7 @@ module Api
         end
       end
 
-      # DELETE /reservations/1
+      # DELETE /reservations/:id
       def destroy
         @reservation.destroy
       end
