@@ -1,19 +1,28 @@
 module Api
   module V1
     class ReservationsController < ApplicationController
-      before_action :authenticate_request!, only: [:create, :update, :destroy ]
       before_action :set_reservation, only: [:show, :update, :destroy]
 
       # GET /reservations
       def index
         @reservations = Reservation.all
-        render json: @ReservationsRepresenter.new(@reservations).as_json
+        @reservation_data = @reservations.map do |reservation|
+          {
+            rails_blob_url(reservation.doctor.photo),
+            id: reservation.id,
+            city: reservation.city,
+            date: reservation.date,
+            time: reservation.time,
+            doctor: Doctor.find(reservation.doctor_id).name
+          }
+        end
+        render json: @reservation_data
       end
 
       # POST /reservations
       def create
-        @reservation = @current_user.reservations.new(reservation_params)
-
+        @user = User.find(params[:reservation][:user_id])
+        @reservation = @user.reservations.build(reservation_params)
         if @reservation.save
           render json: ReservationsRepresenter.new(@reservation).as_json status: :created
         else
