@@ -1,4 +1,6 @@
 class Api::DoctorsController < ApplicationController
-    @doctors = Doctor.all
-    render json: @doctors
+    def index
+        @doctors = Doctor.all
+        render json: @doctors
+    end
 end
