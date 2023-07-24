@@ -7,12 +7,12 @@ module Api
       def index
         @reservations = Reservation.all
         @reservation_data = @reservations.map do |reservation|
+          doctor_photo_url = reservation.doctor&.photo&.attached? ? rails_blob_url(reservation.doctor.photo) : nil
+
           {
-            rails_blob_url(reservation.doctor.photo),
+            url: doctor_photo_url,
             id: reservation.id,
-            city: reservation.city,
-            date: reservation.date,
-            time: reservation.time,
+            appointment_time: reservation.appointment_time,
             doctor: Doctor.find(reservation.doctor_id).name
           }
         end
@@ -24,7 +24,7 @@ module Api
         @user = User.find(params[:reservation][:user_id])
         @reservation = @user.reservations.build(reservation_params)
         if @reservation.save
-          render json: Reservation.new(@reservation).as_json status: :created
+          render json: Reservation.new(@reservation).as_json, status: :created
         else
           render json: @reservation.errors, status: :unprocessable_entity
         end
@@ -58,7 +58,8 @@ module Api
 
         # Only allow a trusted parameter "white list" through.
         def reservation_params
-          params.require(:reservation).permit(:name, :city, :date, :time, :doctor_id)
+          params.require(:reservation).permit(:name, :date, :time, :doctor_id)
         end
     end
   end
+end
