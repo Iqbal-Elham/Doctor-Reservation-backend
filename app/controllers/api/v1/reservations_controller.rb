@@ -24,7 +24,7 @@ module Api
         @user = User.find(params[:reservation][:user_id])
         @reservation = @user.reservations.build(reservation_params)
         if @reservation.save
-          render json: ReservationsRepresenter.new(@reservation).as_json status: :created
+          render json: Reservation.new(@reservation).as_json status: :created
         else
           render json: @reservation.errors, status: :unprocessable_entity
         end
@@ -32,14 +32,14 @@ module Api
 
       # GET /reservations/:id
       def show
-        render json: ReservationsRepresenter.new(@reservation).as_json
+        render json: Reservation.new(@reservation).as_json
       end
 
       # PATCH/PUT /reservations/:id
       def update
         @reservation.update(reservation_params)
         if @reservation.save
-          render json: ReservationsRepresenter.new(@reservation).as_json, status: :created
+          render json: Reservation.new(@reservation).as_json, status: :created
         else
           render json: @reservation.errors, status: :unprocessable_entity
         end
