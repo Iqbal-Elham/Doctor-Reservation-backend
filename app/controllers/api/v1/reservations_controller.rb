@@ -12,6 +12,8 @@ module Api
           {
             url: doctor_photo_url,
             id: reservation.id,
+            city: reservation.city,
+            # date: reservation.appointment_time.to_date,
             appointment_time: reservation.appointment_time,
             doctor: Doctor.find(reservation.doctor_id).name
           }
@@ -58,7 +60,7 @@ module Api
 
         # Only allow a trusted parameter "white list" through.
         def reservation_params
-          params.require(:reservation).permit(:name, :date, :time, :doctor_id)
+          params.require(:reservation).permit(:name, :city, :date, :time, :doctor_id)
         end
     end
   end
