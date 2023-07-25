@@ -1,7 +1,7 @@
 module Api
   module V1
     class ReservationsController < ApplicationController
-      before_action :set_reservation, only: [:show, :update, :destroy]
+      before_action :set_reservation, only: %i[show update destroy]
 
       # GET /reservations
       def index
@@ -53,15 +53,16 @@ module Api
       end
 
       private
-        # Use callbacks to share common setup or constraints between actions.
-        def set_reservation
-          @reservation = Reservation.find(params[:id])
-        end
 
-        # Only allow a trusted parameter "white list" through.
-        def reservation_params
-          params.require(:reservation).permit(:name, :city, :date, :time, :doctor_id)
-        end
+      # Use callbacks to share common setup or constraints between actions.
+      def set_reservation
+        @reservation = Reservation.find(params[:id])
+      end
+
+      # Only allow a trusted parameter "white list" through.
+      def reservation_params
+        params.require(:reservation).permit(:name, :city, :date, :time, :doctor_id)
+      end
     end
   end
 end
