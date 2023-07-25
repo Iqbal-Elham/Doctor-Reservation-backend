@@ -7,7 +7,8 @@ class Api::ReservationsController < ApplicationController
         id: reservation.id,
         appointment_time: reservation.appointment_time,
         doctor: Doctor.find(reservation.doctor_id).name,
-        patient: Patient.find(reservation.patient_id).name
+        patient: Patient.find(reservation.patient_id).name,
+        city: reservation.city
       }
     end
     render json: @reservation_data
