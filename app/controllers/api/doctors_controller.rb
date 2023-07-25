@@ -9,6 +9,6 @@ class Api::DoctorsController < ApplicationController
   def destroy
     @doctor = Doctor.find(params[:id])
     @doctor.destroy
-    render json: {message: 'Doctor deleted successfully'}
+    render json: { message: 'Doctor deleted successfully' }
   end
 end
