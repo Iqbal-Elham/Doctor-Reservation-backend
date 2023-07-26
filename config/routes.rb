@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   namespace :api do
-    resources :doctors, only: [:index]
+    resources :doctors, only: [:index, :show]
     namespace :v1 do
       resources :reservations, only: [:index, :create, :show, :update, :destroy]
     end
