@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   namespace :api do
     get 'doctors', to: 'doctors#index'
+    # resources :doctors, only: [:index, :show]
     namespace :v1 do
       resources :reservations, only: [:index, :create, :show, :update, :destroy]
     end
