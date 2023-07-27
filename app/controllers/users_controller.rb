@@ -7,7 +7,8 @@ class UsersController < ApplicationController
     elsif user.save
       render json: { status: 'SUCCESS', message: 'Saved user', data: user }, status: :ok
     else
-      render json: { status: 'ERROR', message: 'User not saved', data: user.errors, error: user.errors.full_messages.join(", ") }, status: :unprocessable_entity
+      render json: { status: 'ERROR', message: 'User not saved', data: user.errors },
+             status: :unprocessable_entity
     end
   end
 
