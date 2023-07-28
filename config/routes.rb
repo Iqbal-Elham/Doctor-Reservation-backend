@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  # resources :users, only: [:create]
+  # post '/login', to: 'sessions#create'
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  get '/users/:username', to: 'users#show'
+  post '/users/:username', to: 'users#show'
+  post '/users', to: 'users#create'
+  delete '/users/:username', to: 'users#destroy'
+
   namespace :api do
-    get 'doctors', to: 'doctors#index'
-    namespace :v1 do
-      resources :reservations, only: [:index, :create, :show, :update, :destroy]
-    end
-  end
+    resources :doctors, only: [:index, :show, :destroy]
+    resources :reservations
+  end 
 end
