@@ -6,11 +6,9 @@ Rails.application.routes.draw do
   post '/users/:username', to: 'users#show'
   post '/users', to: 'users#create'
   delete '/users/:username', to: 'users#destroy'
-  
 
   namespace :api do
-    resources :doctors
-    resources :doctors, only: [:index, :destroy]
-    resources :reservations, only: [:index]
+    resources :doctors, only: [:index, :show, :destroy]
+    resources :reservations
   end 
 end

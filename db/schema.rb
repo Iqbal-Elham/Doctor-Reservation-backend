@@ -35,6 +35,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_26_052816) do
     t.bigint "patient_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "city"
     t.index ["doctor_id"], name: "index_reservations_on_doctor_id"
     t.index ["patient_id"], name: "index_reservations_on_patient_id"
   end

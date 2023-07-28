@@ -16,16 +16,15 @@
 #
 default: &default
   adapter: postgresql
-  encoding: unicode
-  username: postgres
-  password: password
-  # For details on connection pooling, see Rails configuration guide
-  # https://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: <%= ENV['DATABASE_USERNAME'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
 
 development:
   <<: *default
   database: Doctor_Reservation_backend_development
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -84,5 +83,3 @@ test:
 production:
   <<: *default
   database: Doctor_Reservation_backend_production
-  username: Doctor_Reservation_backend
-  password: <%= ENV["DOCTOR_RESERVATION_BACKEND_DATABASE_PASSWORD"] %>

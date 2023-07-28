@@ -6,6 +6,11 @@ class Api::DoctorsController < ApplicationController
     render json: @doctors
   end
 
+  def show
+    @doctor = Doctor.find(params[:id])
+    render json: @doctor
+  end
+
   def destroy
     @doctor = Doctor.find(params[:id])
     @doctor.destroy
