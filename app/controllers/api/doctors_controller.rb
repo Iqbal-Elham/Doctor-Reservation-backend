@@ -12,7 +12,7 @@ class Api::DoctorsController < ApplicationController
       id: @doctor.id,
       name: @doctor.name,
       about: @doctor.description,
-      photo: rails_blob_url(@car.photo),
+      photo: rails_blob_url(@doctor.photo),
       price: @doctor.price,
       user_id: @doctor.user_id,
       username: @doctor.user.username
