@@ -33,6 +33,11 @@ gem 'rack-cors'
 
 gem 'dotenv-rails', groups: %i[development test]
 
+gem 'bcrypt', '~> 3.1.7'
+
+gem 'jwt'
+
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
