@@ -5,6 +5,9 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+User.create(username: "iqbal", full_name: "iqbal elham")
+
 Doctor.create(name: "Ahmad", photo: "https://okeydoc.ru/wp-content/uploads/2018/05/5435.jpg", about: "I am a professional Pediatrician with years of experience.", price_hour: 500)
 Doctor.create(name: "Jackson", photo: "https://factroom.ru/wp-content/uploads/2017/09/Depositphotos_39179963_l-2015.jpg", about: "I am a professional Neurologist with years of experience.", price_hour: 800)
 Doctor.create(name: "Mike", photo: "https://www.tubefilter.com/wp-content/uploads/2018/07/doctor-mike-1920x1131.jpg", about: "I am a junior Surgeon, but I have a solid understanding of what I do.", price_hour: 400)
