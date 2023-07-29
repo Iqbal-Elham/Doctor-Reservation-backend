@@ -31,6 +31,8 @@ gem 'rubocop'
 
 gem 'rack-cors'
 
+gem 'dotenv-rails', groups: %i[development test]
+
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'jwt'
