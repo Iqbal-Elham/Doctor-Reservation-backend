@@ -4,5 +4,5 @@ class Doctor < ApplicationRecord
 
   validates :name, presence: true
   validates :about, presence: true
-  validates :price, presence: true
+  validates :price_hour, presence: true
 end
