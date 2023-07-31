@@ -1,5 +1,5 @@
 class Api::DoctorsController < ApplicationController
-  skip_before_action :verify_authenticity_token, only: [:destroy, :create]
+  skip_before_action :verify_authenticity_token, only: %i[destroy create]
 
   def index
     @doctors = Doctor.all
@@ -11,7 +11,7 @@ class Api::DoctorsController < ApplicationController
     # if Doctor.where(name: @user.name).exists?
     #   render json: { status: 'ERROR', message: 'Doctor already exists' }, status: :unprocessable_entity
     if @doctor.save
-      render json: @doctor , status: :created
+      render json: @doctor, status: :created
     else
       render json: { message: @doctor.errors }, status: 400
     end
@@ -33,5 +33,4 @@ class Api::DoctorsController < ApplicationController
   def doctors_params
     params.require(:doctor).permit(:name, :photo, :about, :price_hour)
   end
-
 end
