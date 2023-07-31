@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   delete '/users/:username', to: 'users#destroy'
 
   namespace :api do
-    resources :doctors, only: [:index, :show, :destroy]
+    resources :doctors, only: [:index, :show, :destroy, :create]
     resources :reservations
   end 
 end
