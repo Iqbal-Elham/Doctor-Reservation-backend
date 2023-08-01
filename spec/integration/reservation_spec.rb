@@ -48,3 +48,4 @@ describe 'Reservations API' do
       end
     end
   end
+end

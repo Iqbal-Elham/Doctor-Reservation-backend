@@ -110,6 +110,57 @@ paths:
           description: doctor deleted
         '404':
           description: doctor not found
+  "/api/reservations":
+    get:
+      summary: Retrieves all reservations
+      tags:
+      - Reservations
+      responses:
+        '200':
+          description: reservation found
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    appointment_time:
+                      type: datetime
+                    doctor_id:
+                      type: integer
+                    patient_id:
+                      type: integer
+                  required:
+                  - doctor_id
+                  - patient_id
+                  - appointment_time
+    post:
+      summary: Creates a reservation
+      tags:
+      - Reservations
+      parameters: []
+      responses:
+        '201':
+          description: reservation created
+        '422':
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                appointment_time:
+                  type: datetime
+                doctor_id:
+                  type: integer
+                patient_id:
+                  type: integer
+              required:
+              - doctor_id
+              - patient_id
+              - appointment_time
 servers:
 - url: https://{defaultHost}
   variables:
