@@ -17,7 +17,7 @@ describe 'Doctors API' do
                    about: { type: :string },
                    price_hour: { type: :integer }
                  },
-                 required: ['id', 'name', 'photo', 'about', 'price_hour']
+                 required: %w[id name photo about price_hour]
                }
 
         let(:doctor1) { { id: 1, name: 'Doctor 1', photo: 'http://example.com/doctor1.jpg', about: 'I am a doctor', price_hour: 100 } }
@@ -37,7 +37,7 @@ describe 'Doctors API' do
           about: { type: :string },
           price_hour: { type: :integer }
         },
-        required: ['name', 'photo', 'about', 'price_hour']
+        required: %w[name photo about price_hour]
       }
 
       response '201', 'doctor created' do
@@ -68,7 +68,7 @@ describe 'Doctors API' do
                  about: { type: :string },
                  price_hour: { type: :integer }
                },
-               required: ['id', 'name', 'photo', 'about', 'price_hour']
+               required: %w[id name photo about price_hour]
 
         let(:id) { Doctor.create(name: 'Iqbal', photo: 'http://example.com/avatar.jpg', about: 'I am a neurologist', price_hour: 500).id }
         run_test!

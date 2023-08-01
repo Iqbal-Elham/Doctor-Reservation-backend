@@ -15,7 +15,7 @@ describe 'Reservations API' do
                    doctor_id: { type: :integer },
                    patient_id: { type: :integer }
                  },
-                 required: ['doctor_id', 'patient_id', 'appointment_time']
+                 required: %w[doctor_id patient_id appointment_time]
                }
 
         let(:reservatoin1) { { doctor_id: 1, patient_id: 1, appointment_time: '2023-07-26T14:30:00.000Z' } }
@@ -30,11 +30,11 @@ describe 'Reservations API' do
       parameter name: :reservation, in: :body, schema: {
         type: :object,
         properties: {
-            appointment_time: { type: :datetime },
-            doctor_id: { type: :integer },
-            patient_id: { type: :integer }
+          appointment_time: { type: :datetime },
+          doctor_id: { type: :integer },
+          patient_id: { type: :integer }
         },
-        required: ['doctor_id', 'patient_id', 'appointment_time']
+        required: %w[doctor_id patient_id appointment_time]
       }
 
       response '201', 'reservation created' do
