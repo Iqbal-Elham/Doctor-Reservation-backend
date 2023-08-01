@@ -1,7 +1,6 @@
 class Reservation < ApplicationRecord
   belongs_to :doctor
-  belongs_to :patient
+  belongs_to :username
 
-  validates :city, presence: true
   validates :appointment_time, presence: true
 end
