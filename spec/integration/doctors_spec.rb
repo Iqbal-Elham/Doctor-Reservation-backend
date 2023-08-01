@@ -19,7 +19,7 @@ describe 'Doctors API' do
       }
 
       response '201', 'doctor created' do
-        let(:doctor) { { name: 'Iqbal', photo: 'available', about: 'I am a fake doctor', price_hour: 2} }
+        let(:doctor) { { name: 'Iqbal', photo: 'http://example.com/avatar.jpg', about: 'I am a fake doctor', price_hour: 2} }
         run_test!
       end
 
@@ -29,3 +29,33 @@ describe 'Doctors API' do
       end
     end
   end
+
+  path '/api/doctors/{id}' do
+
+    get 'Retrieves a doctor' do
+      tags 'Doctors'
+      produces 'application/json'
+      parameter name: :id, :in => :path, :type => :string
+
+      response '200', 'name found' do
+        schema type: :object,
+          properties: {
+            id: { type: :integer, },
+            name: { type: :string },
+            photo: { type: :string },
+            about: { type: :string },
+            price_hour: { type: :integer }
+          },
+          required: [ 'id', 'name', 'photo', 'about', 'price_hour' ]
+
+        let(:id) { Doctor.create(name: 'Iqbal', photo: 'http://example.com/avatar.jpg', about: 'I am a neurologist', price_hour: 500).id }
+        run_test!
+      end
+
+      response '404', 'doctor not found' do
+        let(:id) { 'invalid' }
+        run_test!
+      end
+    end
+  end
+end
