@@ -1,30 +1,31 @@
 module Api
   class ReservationsController < ApplicationController
     before_action :set_reservation, only: %i[show update destroy]
+    skip_before_action :verify_authenticity_token, only: %i[destroy create]
 
     # GET /reservations
     def index
       @reservations = Reservation.all
-      @reservation_data = @reservations.map do |reservation|
-        doctor_photo_url = reservation.doctor&.photo&.attached? ? rails_blob_url(reservation.doctor.photo) : nil
-
+      reservation = @reservations.map do |reserve|
+        doctor = Doctor.find(reserve.doctor_id)
         {
-          url: doctor_photo_url,
-          id: reservation.id,
-          city: reservation.city,
-          appointment_time: reservation.appointment_time,
-          doctor: Doctor.find(reservation.doctor_id).name
+          photo: doctor.photo,
+          id: reserve.id,
+          city: reserve.city,
+          appointment_date: reserve.appointment_date,
+          appointment_time: reserve.appointment_time,
+          doctor_name: doctor.name
         }
       end
-      render json: @reservation_data
+      render json: reservation
     end
 
     # POST /reservations
     def create
-      @user = User.find(params[:reservation][:user_id])
+      @user = User.find_by(username: params[:username])
       @reservation = @user.reservations.build(reservation_params)
       if @reservation.save
-        render json: Reservation.new(@reservation).as_json, status: :created
+        render json: @reservation, status: :created
       else
         render json: @reservation.errors, status: :unprocessable_entity
       end
@@ -59,7 +60,7 @@ module Api
 
     # Only allow a trusted parameter "white list" through.
     def reservation_params
-      params.require(:reservation).permit(:name, :city, :date, :time, :doctor_id)
+      params.require(:reservation).permit(:username, :appointment_date, :appointment_time, :doctor_id, :city)
     end
   end
 end

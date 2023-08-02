@@ -34,7 +34,7 @@
 
 # 📖 Doctors Reservation Backend <a name="about-project"></a>
 
-**Doctors Reservation Backend** is a Rails API that serves as database to the [Doctors Reservation Backend Frontend](https://github.com/Iqbal-Elham/Doctor-Reservation-frontend) project.
+**Doctors Reservation Backend** is a Rails API that serves as database to the [Doctors Reservation Frontend](https://github.com/Iqbal-Elham/Doctor-Reservation-frontend) project.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -202,6 +202,8 @@ If you like this project please give it a ⭐️. Your support is greatly apprec
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
 We would like to thank [Microverse](https://www.microverse.org/) for giving us this chance to learn how to build a Rails API and connect it to a React frontend.
+
+- We would like to give Credit to 🙏 [Murat Korkmaz](https://www.behance.net/muratk) the author of the original [Vespa- Responsive Redesign](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign), as required by the Creative Commons License.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
