@@ -1,11 +1,5 @@
 <a name="readme-top"></a>
 
-<div align="center">
-
-  <h3><b>Doctors Reservation Backend</b></h3>
-
-</div>
-
 <!-- TABLE OF CONTENTS -->
 
 # 📗 Table of Contents
@@ -34,7 +28,7 @@
 
 # 📖 Doctors Reservation Backend <a name="about-project"></a>
 
-**Doctors Reservation Backend** is a Rails API that serves as database to the [Doctors Reservation Frontend](https://github.com/Iqbal-Elham/Doctor-Reservation-frontend) project.
+**Doctors Reservation Backend** is  a Rails API that serves as database to the [Doctors Reservation Frontend](https://github.com/Iqbal-Elham/Doctor-Reservation-frontend) project.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -68,7 +62,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Render](*https://*)
+- [Render](*Comming Soon*)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -118,6 +112,7 @@ Example command:
 ```sh
   rails db:create
   rails db:migrate
+  rails db:seed
 ```
 
 ### Usage
@@ -137,7 +132,7 @@ To run tests, run the following command:
 Example command:
 
 ```sh
-  rspec
+  rswag
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -145,12 +140,6 @@ Example command:
 <!-- AUTHORS -->
 
 ## 👥 Authors <a name="authors"></a>
-
-👤 **Mohammad Rafi Amin**
-
-- GitHub: [@githubhandle](https://github.com/mrkamin)
-- Twitter: [@twitterhandle](https://twitter.com/Mohamma63974237)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/mohammad-rafi-amin-63b4319b/)
 
 👤 **Ayomipo Majek**
 
@@ -166,6 +155,13 @@ Example command:
 
 - GitHub: [@Iqbal-Elham](https://github.com/Iqbal-Elham/Iqbal-Elham)
 - GMail: [@Iqbal-Elham](mailto:iqbal.elham7@gmail.com)
+
+👤 **Mohammad Rafi Amin**
+
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/mohammad-rafi-amin-63b4319b/)
+- GitHub: [@githubhandle](https://github.com/mrkamin)
+- Twitter: [@twitterhandle](https://twitter.com/Mohamma63974237)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

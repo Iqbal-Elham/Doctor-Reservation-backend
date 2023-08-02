@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   mount Rswag::Ui::Engine => '/api-docs'
   mount Rswag::Api::Engine => '/api-docs'
-  # resources :users, only: [:create]
-  # post '/login', to: 'sessions#create'
 
   get '/users/:username', to: 'users#show'
   post '/users/:username', to: 'users#show'
