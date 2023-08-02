@@ -156,7 +156,7 @@ Example command:
 - GitHub: [@Iqbal-Elham](https://github.com/Iqbal-Elham/Iqbal-Elham)
 - GMail: [@Iqbal-Elham](mailto:iqbal.elham7@gmail.com)
 
-👤 **Mohammad Rafi Amin**
+👤 **Mohammad Amin**
 
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/mohammad-rafi-amin-63b4319b/)
 - GitHub: [@githubhandle](https://github.com/mrkamin)
