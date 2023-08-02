@@ -28,7 +28,7 @@
 
 # 📖 Doctors Reservation Backend <a name="about-project"></a>
 
-**Doctors Reservation Backend** is a Rails API that serves as database to the [Doctors Reservation Frontend](https://github.com/Iqbal-Elham/Doctor-Reservation-frontend) project.
+**Doctors Reservation Backend** is  a Rails API that serves as database to the [Doctors Reservation Frontend](https://github.com/Iqbal-Elham/Doctor-Reservation-frontend) project.
 
 ## 🛠 Built With <a name="built-with"></a>
 
