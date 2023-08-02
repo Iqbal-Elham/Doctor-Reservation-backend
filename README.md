@@ -158,9 +158,10 @@ Example command:
 
 👤 **Mohammad Rafi Amin**
 
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/mohammad-rafi-amin-63b4319b/)
 - GitHub: [@githubhandle](https://github.com/mrkamin)
 - Twitter: [@twitterhandle](https://twitter.com/Mohamma63974237)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/mohammad-rafi-amin-63b4319b/)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
