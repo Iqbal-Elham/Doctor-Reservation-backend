@@ -132,7 +132,7 @@ To run tests, run the following command:
 Example command:
 
 ```sh
-  rswag
+ rake rswag
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
