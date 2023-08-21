@@ -83,6 +83,4 @@ test:
 #
 production:
   <<: *default
-  database: Doctor_Reservation_backend_production
-  username: Doctor_Reservation_backend
-  password: <%= ENV["DOCTOR_RESERVATION_BACKEND_DATABASE_PASSWORD"] %>
+  url: <%= ENV["MY_APP_DATABASE_URL"] %>
