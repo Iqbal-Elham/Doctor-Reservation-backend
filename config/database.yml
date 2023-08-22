@@ -25,7 +25,7 @@ default: &default
 
 development:
   <<: *default
-  database: Doctor_Reservation_backend_development
+  url: postgres://my_database_zide_user:5fWoTAe3FzTlWMgHAi3vHcWfFXWgqadL@dpg-cjhqjmdmrchc73a5h1ig-a.oregon-postgres.render.com/my_database_zide
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
